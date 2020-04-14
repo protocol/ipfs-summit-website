@@ -6,6 +6,8 @@ import * as SVG from "~/common/svg";
 
 import { css } from "react-emotion";
 
+const EVENT_URL = `https://www.eventbrite.com/e/ipfs-pinning-summit-registration-102720606098`;
+
 const STYLES_SECTION = css`
   padding: 64px 24px 64px 24px;
   min-height: 100vh;
@@ -17,6 +19,8 @@ const STYLES_SECTION = css`
 `;
 
 const STYLES_SECTION_HERO = css`
+  background-color: ${Constants.brand.dark};
+  color: ${Constants.colors.white};
   padding: 64px 24px 64px 24px;
   min-height: 100vh;
   width: 100%;
@@ -28,7 +32,7 @@ const STYLES_SECTION_HERO = css`
 
 const STYLES_FIXED_NAVIGATION = css`
   height: 72px;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid ${Constants.brand.dark};
   width: 100%;
   position: fixed;
   left: 0;
@@ -69,8 +73,14 @@ const STYLES_MIDDLE = css`
 
 const STYLES_RIGHT = css`
   flex-shrink: 0;
-  padding-right: 24px;
-  min-width: 188px;
+  padding: 0 24px 0 24px;
+  background: rgb(253, 87, 1);
+  height: 72px;
+  text-decoration: none;
+  color: ${Constants.colors.white};
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
   text-align: right;
 
   @media (max-width: 768px) {
@@ -95,17 +105,17 @@ const STYLES_ITEM = css`
 `;
 
 const STYLES_CTA_ITEM = css`
-  text-decoration: underline;
-  color: ${Constants.brand.dark};
+  text-decoration: none;
+  color: ${Constants.colors.white};
   cursor: pointer;
   transition: 200ms ease color;
 
   :visited {
-    color: ${Constants.brand.dark};
+    color: ${Constants.colors.white};
   }
 
   :hover {
-    color: ${Constants.brand.color};
+    color: ${Constants.colors.white};
   }
 `;
 
@@ -118,12 +128,26 @@ const STYLES_LOGO = css`
   top: 16px;
   left: 16px;
   border-radius: 188px;
-  height: 188px;
-  width: 188px;
-  background: rgb(253, 87, 1);
+  height: 224px;
+  width: 224px;
+  background: #041727;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    height: 88px;
+  }
+
+  @media (max-width: 768px) {
+    height: 88px;
+    width: 88px;
+    top: 24px;
+
+    svg {
+      height: 32px;
+    }
+  }
 
   :visited {
     color: ${Constants.brand.dark};
@@ -147,7 +171,7 @@ const STYLES_H1 = css`
 const STYLES_H2 = css`
   font-family: "inter-semi-bold";
   font-weight: 400;
-  font-size: 1.999rem;
+  font-size: 1.725rem;
   line-height: 1.4;
   max-width: 640px;
   margin-top: 1.414rem;
@@ -158,18 +182,22 @@ const STYLES_H2 = css`
 const STYLES_H3 = css`
   font-family: "inter-regular";
   font-weight: 400;
-  font-size: 1.999rem;
+  font-size: 1.725rem;
   line-height: 1.4;
   max-width: 640px;
   margin-top: 1.414rem;
   padding: 24px;
   text-align: center;
+
+  strong {
+    font-family: "inter-medium";
+  }
 `;
 
 const STYLES_LINK = css`
   font-family: "inter-medium";
   color: ${Constants.brand.dark};
-  font-size: 1.999rem;
+  font-size: 1.725rem;
   text-decoration: underline;
   cursor: pointer;
 
@@ -184,17 +212,25 @@ const STYLES_LINK = css`
 
 const STYLES_BUTTON = css`
   font-family: "inter-medium";
-  font-size: 1.999rem;
-  color: ${Constants.brand.dark};
-  text-decoration: underline;
+  font-size: 24px;
+  color: ${Constants.colors.white};
+  text-decoration: none;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(253, 87, 1);
+  border-radius: 64px;
+  height: 64px;
+  padding: 0 24px 0 24px;
+  transition: 200ms ease all;
 
   :visited {
-    color: ${Constants.brand.dark};
+    color: ${Constants.colors.white};
   }
 
   :hover {
-    color: ${Constants.brand.color};
+    color: ${Constants.colors.white};
   }
 `;
 
@@ -218,7 +254,7 @@ const H3 = (props) => (
 
 const STYLES_CARD_AGENDA = css`
   padding: 24px;
-  font-size: 1.999rem;
+  font-size: 1.725rem;
   text-align: center;
   border-radius: 16px;
 `;
@@ -254,7 +290,7 @@ const STYLES_SPEAKER = css`
   padding: 24px;
   background: ${Constants.brand.dark};
   color: ${Constants.colors.white};
-  font-size: 1.999rem;
+  font-size: 1.725rem;
   margin: 24px;
 `;
 
@@ -305,7 +341,7 @@ export default class IndexPage extends React.Component {
         <div className={STYLES_FIXED_NAVIGATION}>
           <span className={STYLES_LEFT}>
             <a className={STYLES_LOGO} href="/">
-              <SVG.Logo height="88px" />
+              <SVG.Logo />
             </a>
           </span>
           <span className={STYLES_MIDDLE}>
@@ -323,29 +359,31 @@ export default class IndexPage extends React.Component {
             </a>
           </span>
           <span className={STYLES_RIGHT}>
-            <a
-              className={STYLES_CTA_ITEM}
-              target="_blank"
-              href="https://ipfs.io/"
-            >
+            <a className={STYLES_CTA_ITEM} target="_blank" href={EVENT_URL}>
               Register Now
             </a>
           </span>
         </div>
+
         <div className={STYLES_SECTION_HERO}>
           <H1 style={{ paddingTop: 88 }}>IPFS Pinning Summit</H1>
           <H3>
-            Two days
-            <br /> April 23rd — 24th
+            April 23rd — 24th
             <br />
-            <br /> Join IPFS and Filecoin developers and learn about
-            opportunities to build on the network.
+            <br /> The IPFS Pinning Summit is a 2-day virtual conference
+            designed for the{" "}
+            <strong>
+              infrastructure and service providers of the distributed web.
+            </strong>{" "}
+            Join fellow attendees and core IPFS and Filecoin developers to
+            discuss learnings, pain points, and new opportunities for
+            distributed web infrastructure.
           </H3>
 
           <a
             className={STYLES_BUTTON}
             style={{ marginTop: 24, marginBottom: 88 }}
-            href="https://ipfs.io/"
+            href={EVENT_URL}
           >
             Register Now
           </a>
@@ -503,33 +541,39 @@ export default class IndexPage extends React.Component {
               src="/static/placeholder-10.jpg"
             />
           </div>
+        </div>
 
-          <div className={STYLES_SECTION} id="watch">
-            <H2>Watch</H2>
-            <H3>Uploaded videos and keynotes will appear here.</H3>
-          </div>
+        <div className={STYLES_SECTION} id="watch">
+          <H2>Watch</H2>
+          <H3>Uploaded videos and keynotes will appear here.</H3>
+        </div>
 
-          <div className={STYLES_SECTION} id="about">
-            <H2>About</H2>
-            <H3>
-              IPFS powers the creation of diversely resilient networks that
-              enable persistent availability — with or without Internet backbone
-              connectivity. This means better connectivity for the developing
-              world, during natural disasters, or just when you're on flaky
-              coffee shop wi-fi. <br /> <br />
-              <a
-                className={STYLES_LINK}
-                target="_blank"
-                href="https://filecoin.io"
-              >
-                Learn about Filecoin
-              </a>{" "}
-              <br />{" "}
-              <a target="_blank" className={STYLES_LINK} href="https://ipfs.io">
-                Learn about IPFS
-              </a>
-            </H3>
-          </div>
+        <div
+          className={STYLES_SECTION}
+          style={{
+            background: `linear-gradient(rgb(249, 249, 249), rgb(232, 234, 255))`,
+          }}
+          id="about"
+        >
+          <H2>About</H2>
+          <H3>
+            IPFS powers the creation of diversely resilient networks that enable
+            persistent availability — with or without Internet backbone
+            connectivity. This means better connectivity for the developing
+            world, during natural disasters, or just when you're on flaky coffee
+            shop wi-fi. <br /> <br />
+            <a
+              className={STYLES_LINK}
+              target="_blank"
+              href="https://filecoin.io"
+            >
+              Learn about Filecoin
+            </a>{" "}
+            <br />{" "}
+            <a target="_blank" className={STYLES_LINK} href="https://ipfs.io">
+              Learn about IPFS
+            </a>
+          </H3>
         </div>
       </React.Fragment>
     );
