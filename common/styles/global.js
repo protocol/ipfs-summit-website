@@ -50,7 +50,7 @@ export default () => injectGlobal`
   }
 
   html, body {
-  background-color: ${Constants.brand.color};
+  background-color: ${Constants.colors.white};
   color: ${Constants.brand.dark};
     font-size: 16px;
     font-family: 'inter-regular', -apple-system, BlinkMacSystemFont, arial, sans-serif;

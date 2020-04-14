@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import * as React from "react";
 import * as Constants from "~/common/constants";
+import * as SVG from "~/common/svg";
 
 import { css } from "react-emotion";
 
@@ -33,7 +34,7 @@ const STYLES_FIXED_NAVIGATION = css`
   left: 0;
   right: 0;
   top: 0;
-  background-color: ${Constants.brand.color};
+  background-color: ${Constants.colors.white};
   color: ${Constants.brand.dark};
   display: flex;
   align-items: center;
@@ -89,26 +90,11 @@ const STYLES_ITEM = css`
   }
 
   :hover {
-    color: ${Constants.colors.white};
+    color: ${Constants.brand.color};
   }
 `;
 
 const STYLES_CTA_ITEM = css`
-  text-decoration: underline;
-  color: ${Constants.colors.white};
-  cursor: pointer;
-  transition: 200ms ease color;
-
-  :visited {
-    color: ${Constants.colors.white};
-  }
-
-  :hover {
-    color: ${Constants.colors.gray};
-  }
-`;
-
-const STYLES_LOGO = css`
   text-decoration: underline;
   color: ${Constants.brand.dark};
   cursor: pointer;
@@ -119,7 +105,32 @@ const STYLES_LOGO = css`
   }
 
   :hover {
-    color: ${Constants.colors.gray};
+    color: ${Constants.brand.color};
+  }
+`;
+
+const STYLES_LOGO = css`
+  text-decoration: underline;
+  color: ${Constants.brand.dark};
+  cursor: pointer;
+  transition: 200ms ease color;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 188px;
+  height: 188px;
+  width: 188px;
+  background: rgb(253, 87, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :visited {
+    color: ${Constants.brand.dark};
+  }
+
+  :hover {
+    color: ${Constants.brand.color};
   }
 `;
 
@@ -157,33 +168,33 @@ const STYLES_H3 = css`
 
 const STYLES_LINK = css`
   font-family: "inter-medium";
-  color: ${Constants.colors.white};
+  color: ${Constants.brand.dark};
   font-size: 1.999rem;
   text-decoration: underline;
   cursor: pointer;
 
-  :hover {
-    color: ${Constants.colors.white};
+  :visited {
+    color: ${Constants.brand.dark};
   }
 
-  :visited {
-    color: ${Constants.colors.gray};
+  :hover {
+    color: ${Constants.brand.color};
   }
 `;
 
 const STYLES_BUTTON = css`
   font-family: "inter-medium";
   font-size: 1.999rem;
-  color: ${Constants.colors.white};
+  color: ${Constants.brand.dark};
   text-decoration: underline;
   cursor: pointer;
 
-  :hover {
-    color: ${Constants.colors.white};
+  :visited {
+    color: ${Constants.brand.dark};
   }
 
-  :visited {
-    color: ${Constants.colors.gray};
+  :hover {
+    color: ${Constants.brand.color};
   }
 `;
 
@@ -294,7 +305,7 @@ export default class IndexPage extends React.Component {
         <div className={STYLES_FIXED_NAVIGATION}>
           <span className={STYLES_LEFT}>
             <a className={STYLES_LOGO} href="/">
-              Logo
+              <SVG.Logo height="88px" />
             </a>
           </span>
           <span className={STYLES_MIDDLE}>
