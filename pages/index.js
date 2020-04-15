@@ -3,8 +3,13 @@ import Head from "next/head";
 import * as React from "react";
 import * as Constants from "~/common/constants";
 import * as SVG from "~/common/svg";
+import * as Fixtures from "~/common/fixtures";
 
 import { css } from "react-emotion";
+
+import Navigation from "~/components/Navigation";
+import Speakers from "~/components/Speakers";
+import Schedule from "~/components/Schedule";
 
 const EVENT_URL = `https://www.eventbrite.com/e/ipfs-pinning-summit-registration-102720606098`;
 
@@ -28,100 +33,22 @@ const STYLES_SECTION_HERO = css`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`;
-
-const STYLES_FIXED_NAVIGATION = css`
-  height: 72px;
-  box-shadow: inset 0 -2px 0 #4d5260;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: ${Constants.brand.dark};
-  color: ${Constants.colors.white};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: "inter-semi-bold";
+  border-bottom: 2px solid #ececec;
 `;
 
 const STYLES_INFO = css`
   color: ${Constants.colors.black};
-  background: ${Constants.colors.white};
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 16px;
   font-size: 1.414rem;
   line-height: 1.5;
   border-radius: 0px 0px 4px 4px;
-  text-align: left;
+  text-align: center;
   max-width: 568px;
 
   strong {
     font-family: "inter-semi-bold";
     font-weight: 400;
     color: ${Constants.colors.darkTeal};
-  }
-`;
-
-const STYLES_LEFT = css`
-  padding-left: 24px;
-  flex-shrink: 0;
-`;
-
-const STYLES_MIDDLE = css`
-  min-width: 10%;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
-const STYLES_RIGHT = css`
-  flex-shrink: 0;
-  padding: 0 24px 0 24px;
-  text-decoration: none;
-  color: ${Constants.colors.white};
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: right;
-
-  @media (max-width: 768px) {
-    min-width: auto;
-  }
-`;
-
-const STYLES_ITEM = css`
-  text-decoration: none;
-  color: ${Constants.colors.white};
-  cursor: pointer;
-  transition: 200ms ease color;
-
-  :visited {
-    color: ${Constants.colors.gray};
-  }
-
-  :hover {
-    color: ${Constants.colors.orange};
-  }
-`;
-
-const STYLES_LOGO = css`
-  text-decoration: none;
-  color: ${Constants.colors.white};
-  cursor: pointer;
-  transition: 200ms ease color;
-  display: flex;
-  padding-top: 4px;
-
-  :visited {
-    color: ${Constants.colors.white};
-  }
-
-  :hover {
-    color: ${Constants.brand.color};
   }
 `;
 
@@ -138,7 +65,7 @@ const STYLES_H1 = css`
 const STYLES_H2 = css`
   font-family: "inter-semi-bold";
   font-weight: 400;
-  font-size: 1.725rem;
+  font-size: 1.999rem;
   line-height: 1.4;
   max-width: 640px;
   margin-top: 1.414rem;
@@ -151,31 +78,36 @@ const STYLES_H3 = css`
   font-weight: 400;
   font-size: 1.725rem;
   line-height: 1.4;
-  max-width: 640px;
+  max-width: 768px;
   margin-top: 1.414rem;
   padding: 24px;
   text-align: center;
+
+  strong {
+    font-family: "inter-semi-bold";
+    font-weight: 400;
+  }
 `;
 
 const STYLES_LINK = css`
   font-family: "inter-medium";
-  color: ${Constants.brand.dark};
+  color: ${Constants.colors.teal};
   font-size: 1.725rem;
   text-decoration: underline;
   cursor: pointer;
 
   :visited {
-    color: ${Constants.brand.dark};
+    color: ${Constants.colors.teal};
   }
 
   :hover {
-    color: ${Constants.brand.color};
+    color: ${Constants.colors.darkTeal};
   }
 `;
 
 const STYLES_BUTTON = css`
   font-family: "inter-medium";
-  font-size: 16px;
+  font-size: 20px;
   color: ${Constants.colors.white};
   text-decoration: none;
   cursor: pointer;
@@ -217,74 +149,6 @@ const H3 = (props) => (
   </h3>
 );
 
-const STYLES_CARD_AGENDA = css`
-  padding: 24px;
-  font-size: 1.725rem;
-  text-align: center;
-  border-radius: 16px;
-`;
-
-const STYLES_CARD_AGENDA_TIME = css``;
-
-const STYLES_CARD_AGENDA_TITLE = css`
-  margin-top: 4px;
-`;
-
-const STYLES_CARD_AGENDA_SPEAKER = css`
-  margin-top: 4px;
-  color: ${Constants.colors.black};
-  text-decoration: underline;
-`;
-
-const STYLES_CARD_ACTION = css`
-  margin-top: 4px;
-  color: ${Constants.colors.black};
-  text-decoration: underline;
-`;
-
-const CardAgenda = (props) => (
-  <div className={STYLES_CARD_AGENDA}>
-    <div className={STYLES_CARD_AGENDA_TIME}>{props.time}</div>
-    <div className={STYLES_CARD_AGENDA_TITLE}>{props.children}</div>
-    <div className={STYLES_CARD_AGENDA_SPEAKER}>{props.speaker}</div>
-    <div className={STYLES_CARD_ACTION}>{props.action}</div>
-  </div>
-);
-
-const STYLES_SPEAKER = css`
-  padding: 24px;
-  background: ${Constants.brand.dark};
-  color: ${Constants.colors.white};
-  font-size: 1.725rem;
-  margin: 24px;
-`;
-
-const STYLES_SPEAKER_IMAGE = css`
-  width: 244px;
-  height: 344px;
-  background-size: cover;
-  background-position: 50% 50%;
-`;
-
-const STYLES_SPEAKER_NAME = css`
-  margin-top: 1.414rem;
-`;
-
-const STYLES_SPEAKER_COMPANY = css`
-  margin-top: 0.25rem;
-`;
-
-const Speaker = (props) => (
-  <div className={STYLES_SPEAKER}>
-    <div
-      className={STYLES_SPEAKER_IMAGE}
-      style={{ backgroundImage: `url('${props.src}')` }}
-    />
-    <div className={STYLES_SPEAKER_NAME}>{props.name}</div>
-    <div className={STYLES_SPEAKER_COMPANY}>{props.company}</div>
-  </div>
-);
-
 const STYLES_ROW = css`
   display: flex;
   align-items: center;
@@ -295,32 +159,18 @@ const STYLES_ROW = css`
 `;
 
 const STYLES_CARD = css`
+  background-color: ${Constants.colors.white};
   border-radius: 8px;
-  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 568px;
   margin: 24px 24px 0 24px;
   transition: transform ease 200ms;
   transform: scale(1);
-
-  :hover {
-    transform: scale(1.15);
-  }
+  box-shadow: inset 0 0 0 2px #ececec;
+  text-align: center;
 `;
 
 const STYLES_CARD_TOP = css`
-  background: #232526; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #414345,
-    #232526
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #414345,
-    #232526
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   border-radius: 8px 8px 0px 0px;
   display: flex;
   align-items: center;
@@ -331,7 +181,6 @@ const STYLES_CARD_TOP = css`
 
 const STYLES_CARD_BOTTOM = css`
   color: ${Constants.colors.black};
-  background: #f9a138;
   border-radius: 0px;
   padding: 16px;
   display: flex;
@@ -344,6 +193,7 @@ const STYLES_CARD_BOTTOM = css`
 const STYLES_CARD_BOTTOM_LEFT_TITLE = css`
   font-family: "inter-semi-bold";
   margin: 2px 0 4px 0;
+  font-size: 1.717rem;
 `;
 
 const STYLES_CARD_BOTTOM_LEFT = css`
@@ -365,67 +215,25 @@ export default class IndexPage extends React.Component {
         <Head>
           <title>IPFS Pinning Summit</title>
         </Head>
-        <div className={STYLES_FIXED_NAVIGATION}>
-          <span className={STYLES_LEFT}>
-            <a
-              className={STYLES_LOGO}
-              target="_blank"
-              href="https://protocol.ai"
-            >
-              <SVG.WhiteLogo height="32px" />
-            </a>
-          </span>
-          <span className={STYLES_MIDDLE}>
-            <a
-              className={STYLES_ITEM}
-              style={{ marginLeft: 48 }}
-              href="#schedule"
-            >
-              Schedule
-            </a>
-            <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">
-              Watch
-            </a>
-            <a
-              className={STYLES_ITEM}
-              style={{ marginLeft: 24 }}
-              href="#speakers"
-            >
-              Speakers
-            </a>
-            <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#about">
-              About
-            </a>
-          </span>
-          <span className={STYLES_RIGHT}>
-            <a className={STYLES_ITEM} target="_blank" href={EVENT_URL}>
-              Register
-            </a>
-          </span>
-        </div>
+        <Navigation eventURL={EVENT_URL} />
 
         <div
           className={STYLES_SECTION_HERO}
-          style={{ backgroundImage: `url('/static/bg.png')` }}
+          style={{ backgroundImage: `url('/static/bg-6.png')` }}
         >
           <div className={STYLES_CARD}>
             <div className={STYLES_CARD_TOP}>
-              <SVG.Logo height="188px" />
+              <SVG.Logo height="144px" />
             </div>
             <div className={STYLES_CARD_BOTTOM}>
               <div className={STYLES_CARD_BOTTOM_LEFT}>
                 <div className={STYLES_CARD_BOTTOM_LEFT_TITLE}>
                   IPFS Pinning Summit
                 </div>
-                <div>April 23rd — 24th</div>
-              </div>
-              <div className={STYLES_CARD_BOTTOM_RIGHT}>
-                <a className={STYLES_BUTTON} href={EVENT_URL}>
-                  Register now
-                </a>
+                <div>May 7th — 8th</div>
               </div>
             </div>
-            <div className={STYLES_INFO} style={{ backgroundColor: "#F4F4F4" }}>
+            <div className={STYLES_INFO}>
               <div>
                 The IPFS Pinning Summit is a 2-day virtual conference designed
                 for the{" "}
@@ -437,163 +245,36 @@ export default class IndexPage extends React.Component {
                 Join fellow attendees and core IPFS and Filecoin developers to
                 discuss learnings, pain points, and new opportunities for
                 distributed web infrastructure.
+                <br />
+                <br />
+                <a
+                  className={STYLES_BUTTON}
+                  style={{ margin: "0 0 48px 0" }}
+                  href={EVENT_URL}
+                >
+                  Register now
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         <div className={STYLES_SECTION} id="schedule">
-          <H2>April 23 — Schedule</H2>
+          <H2>May 7th — Schedule</H2>
 
-          <CardAgenda
-            time="11 AM"
-            speaker="Roger Blackmore (Microsoft)"
-            action="Watch replay"
-          >
-            The Time I Found 4 Dogs
-          </CardAgenda>
-
-          <CardAgenda
-            time="12 AM"
-            speaker="Susie Smith (AirB&B)"
-            action="Download keynote"
-          >
-            The Time I Found 20 Dogs
-          </CardAgenda>
-
-          <CardAgenda
-            time="2 PM"
-            speaker="Aaron McKenzie (Cisco)"
-            action="Watch replay"
-          >
-            The Time I Found That Dog You Found
-          </CardAgenda>
-
-          <CardAgenda
-            time="3 PM"
-            speaker="Melody Bryant (Figma)"
-            action="Download keynote"
-          >
-            It Wasn't A Dog
-          </CardAgenda>
-
-          <CardAgenda
-            time="4 PM"
-            speaker="Caleb Pooter (Microsoft)"
-            action="Watch replay"
-          >
-            Should Have Been Different
-          </CardAgenda>
-
-          <CardAgenda
-            time="5 PM"
-            speaker="Rekka Bell (Foster Farms)"
-            action="Download keynote"
-          >
-            Dogs Ending Statement
-          </CardAgenda>
+          <Schedule data={Fixtures.ScheduleOne} />
         </div>
 
         <div className={STYLES_SECTION}>
-          <H2>April 24 — Schedule</H2>
+          <H2>May 8th— Schedule</H2>
 
-          <CardAgenda
-            time="11 AM"
-            speaker="John Smith (Boeing)"
-            action="Download keynote"
-          >
-            I Don't Want The Dogs Back
-          </CardAgenda>
-
-          <CardAgenda
-            time="12 AM"
-            speaker="Benson Clark (New York Times)"
-            action="Watch replay"
-          >
-            Dogs Are Dogs And You Are You
-          </CardAgenda>
-
-          <CardAgenda
-            time="2 PM"
-            speaker="Rebecca Cox (Salesforce)"
-            action="Watch replay"
-          >
-            A Dog Alone, And Two Dogs Together
-          </CardAgenda>
-
-          <CardAgenda
-            time="3 PM"
-            speaker="Thor Henderson (GitHub)"
-            action="Download keynote"
-          >
-            Won't Find Any Dogs here
-          </CardAgenda>
+          <Schedule data={Fixtures.ScheduleTwo} />
         </div>
 
         <div className={STYLES_SECTION} id="speakers">
           <H2>Speakers</H2>
 
-          <div className={STYLES_ROW}>
-            <Speaker
-              name="Roger Blackmore"
-              company="Microsoft"
-              src="/static/placeholder-1.jpg"
-            />
-
-            <Speaker
-              name="Susie Smith"
-              company="AirB&B"
-              src="/static/placeholder-2.jpg"
-            />
-
-            <Speaker
-              name="Aaron McKenzie"
-              company="Cisco"
-              src="/static/placeholder-3.jpg"
-            />
-
-            <Speaker
-              name="Melody Bryant"
-              company="Figma"
-              src="/static/placeholder-4.jpg"
-            />
-
-            <Speaker
-              name="Caleb Pooter"
-              company="Figma"
-              src="/static/placeholder-5.jpg"
-            />
-
-            <Speaker
-              name="Rekka Bell"
-              company="Foster Farms"
-              src="/static/placeholder-6.jpg"
-            />
-
-            <Speaker
-              name="John Smith"
-              company="Boeing"
-              src="/static/placeholder-7.jpg"
-            />
-
-            <Speaker
-              name="Benson Clark"
-              company="New York Times"
-              src="/static/placeholder-8.jpg"
-            />
-
-            <Speaker
-              name="Rebecca Cox"
-              company="Salesforce"
-              src="/static/placeholder-9.jpg"
-            />
-
-            <Speaker
-              name="Thor Henderson"
-              company="GitHub"
-              src="/static/placeholder-10.jpg"
-            />
-          </div>
+          <Speakers data={Fixtures.Presenters} />
         </div>
 
         <div className={STYLES_SECTION} id="watch">
@@ -610,22 +291,71 @@ export default class IndexPage extends React.Component {
         >
           <H2>About</H2>
           <H3>
-            IPFS powers the creation of diversely resilient networks that enable
-            persistent availability — with or without Internet backbone
-            connectivity. This means better connectivity for the developing
-            world, during natural disasters, or just when you're on flaky coffee
-            shop wi-fi. <br /> <br />
-            <a
-              className={STYLES_LINK}
-              target="_blank"
-              href="https://filecoin.io"
-            >
-              Learn about Filecoin
+            The IPFS Pinning Summit was co-organized by the{" "}
+            <a className={STYLES_LINK} href="#">
+              Filecoin Project
             </a>{" "}
-            <br />{" "}
-            <a target="_blank" className={STYLES_LINK} href="https://ipfs.io">
-              Learn about IPFS
+            and the{" "}
+            <a className={STYLES_LINK} href="#">
+              IPFS Project
             </a>
+            , and was sponsored by{" "}
+            <a className={STYLES_LINK} href="#">
+              Protocol Labs
+            </a>
+            .<br />
+            <br />
+            <a className={STYLES_LINK} href="#">
+              IPFS
+            </a>{" "}
+            is a peer-to-peer network and protocol designed to make the web
+            faster, safer, and more open. IPFS reimagines the web to work peer
+            to peer by addressing data by <strong>what</strong> it is instead of{" "}
+            <strong>where</strong> it’s located on the network, or what entity
+            is hosting it. Instead of a central point of failure and control
+            over what the rest of the network can do, IPFS gives people the
+            power to control their own data and tools, so no central
+            organization can limit access, take it over, or censor
+            communications.
+            <br />
+            <br />
+            <a className={STYLES_LINK} href="#">
+              Filecoin
+            </a>{" "}
+            is a decentralized storage network, powered by a blockchain and a
+            native token. The Filecoin protocol creates an algorithmic market
+            for cloud storage, connecting entities that have resources like
+            storage and bandwidth (“miners”) with entities that want to hire
+            those resources (“clients”). Anyone can sign up to be a miner or a
+            client on the network. Filecoin combines novel cryptography, market
+            incentives, and a peer-to-peer network to create a robust foundation
+            for humanity’s information.
+            <br />
+            <br />
+            <a className={STYLES_LINK} href="#">
+              Protocol Labs
+            </a>{" "}
+            is a research and development organization that was founded in 2014.
+            Protocol Labs’ mission is to build modular, open-source technologies
+            and protocols to upgrade the infrastructure of the internet. Over
+            the last few years, Protocol Labs has built and maintained several
+            open-source protocols, including{" "}
+            <a className={STYLES_LINK} href="#">
+              IPFS
+            </a>
+            ,{" "}
+            <a className={STYLES_LINK} href="#">
+              libp2p
+            </a>
+            ,{" "}
+            <a className={STYLES_LINK} href="#">
+              IPLD
+            </a>
+            , and{" "}
+            <a className={STYLES_LINK} href="#">
+              Filecoin
+            </a>
+            .
           </H3>
         </div>
       </React.Fragment>
