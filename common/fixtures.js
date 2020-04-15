@@ -1,6 +1,6 @@
 export const Presenters = {
   "molly-mackinlay": {
-    name: "Molly MacKinlay",
+    name: "Molly Mackinlay",
     organization: "Protocol Labs",
     photo: "molly.jpeg",
   },
