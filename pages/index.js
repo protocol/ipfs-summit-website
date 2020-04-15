@@ -53,15 +53,14 @@ const STYLES_INFO = css`
   padding: 16px;
   font-size: 1.414rem;
   line-height: 1.5;
-  border-radius: 4px;
+  border-radius: 0px 0px 4px 4px;
   text-align: left;
-  margin-top: 24px;
   max-width: 568px;
 
   strong {
     font-family: "inter-semi-bold";
     font-weight: 400;
-    color: ${Constants.colors.orange};
+    color: ${Constants.colors.darkTeal};
   }
 `;
 
@@ -183,7 +182,7 @@ const STYLES_BUTTON = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgb(253, 87, 1);
+  background: ${Constants.colors.darkTeal};
   border-radius: 48px;
   height: 48px;
   padding: 0 16px 0 16px;
@@ -310,16 +309,16 @@ const STYLES_CARD = css`
 `;
 
 const STYLES_CARD_TOP = css`
-  background: #42275a; /* fallback for old browsers */
+  background: #232526; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
-    #734b6d,
-    #42275a
+    #414345,
+    #232526
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    #734b6d,
-    #42275a
+    #414345,
+    #232526
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   border-radius: 8px 8px 0px 0px;
@@ -332,8 +331,8 @@ const STYLES_CARD_TOP = css`
 
 const STYLES_CARD_BOTTOM = css`
   color: ${Constants.colors.black};
-  background: ${Constants.colors.white};
-  border-radius: 0px 0px 8px 8px;
+  background: #f9a138;
+  border-radius: 0px;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -426,23 +425,19 @@ export default class IndexPage extends React.Component {
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className={STYLES_INFO} style={{ backgroundColor: "#F4F4F4" }}>
-            <div>
-              The IPFS Pinning Summit is a 2-day virtual conference designed for
-              the{" "}
-              <strong>
-                infrastructure and service providers of the distributed web.
-              </strong>
-            </div>
-          </div>
-
-          <div className={STYLES_INFO} style={{ backgroundColor: "#E6E6E6" }}>
-            <div>
-              Join fellow attendees and core IPFS and Filecoin developers to
-              discuss learnings, pain points, and new opportunities for
-              distributed web infrastructure.
+            <div className={STYLES_INFO} style={{ backgroundColor: "#F4F4F4" }}>
+              <div>
+                The IPFS Pinning Summit is a 2-day virtual conference designed
+                for the{" "}
+                <strong>
+                  infrastructure and service providers of the distributed web.
+                </strong>
+                <br />
+                <br />
+                Join fellow attendees and core IPFS and Filecoin developers to
+                discuss learnings, pain points, and new opportunities for
+                distributed web infrastructure.
+              </div>
             </div>
           </div>
         </div>
