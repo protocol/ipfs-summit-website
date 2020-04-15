@@ -55,6 +55,10 @@ export default () => injectGlobal`
     font-size: 16px;
     font-family: 'inter-regular', -apple-system, BlinkMacSystemFont, arial, sans-serif;
 
+    @media (max-width: 1440px) {
+      font-size: 14px;
+    }
+
     @media (max-width: 768px) {
       font-size: 12px;
     }

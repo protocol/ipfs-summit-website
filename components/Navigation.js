@@ -85,8 +85,12 @@ export default (props) => {
   return (
     <div className={STYLES_FIXED_NAVIGATION}>
       <span className={STYLES_LEFT}>
-        <a className={STYLES_LOGO} target="_blank" href="https://protocol.ai">
-          <SVG.WhiteLogo height="32px" />
+        <a
+          className={STYLES_LOGO}
+          target="_blank"
+          href="https://ipfspinningsummit.com/"
+        >
+          <SVG.Logo height="32px" />
         </a>
       </span>
       <span className={STYLES_MIDDLE}>

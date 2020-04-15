@@ -24,8 +24,6 @@ const STYLES_SECTION = css`
 `;
 
 const STYLES_SECTION_HERO = css`
-  background-color: ${Constants.brand.dark};
-  color: ${Constants.colors.white};
   padding: 64px 24px 64px 24px;
   min-height: 100vh;
   width: 100%;
@@ -33,7 +31,6 @@ const STYLES_SECTION_HERO = css`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-bottom: 2px solid #ececec;
 `;
 
 const STYLES_INFO = css`
@@ -65,7 +62,7 @@ const STYLES_H1 = css`
 const STYLES_H2 = css`
   font-family: "inter-semi-bold";
   font-weight: 400;
-  font-size: 1.999rem;
+  font-size: 1.797rem;
   line-height: 1.4;
   max-width: 640px;
   margin-top: 1.414rem;
@@ -76,7 +73,7 @@ const STYLES_H2 = css`
 const STYLES_H3 = css`
   font-family: "inter-regular";
   font-weight: 400;
-  font-size: 1.725rem;
+  font-size: 1.414rem;
   line-height: 1.4;
   max-width: 768px;
   margin-top: 1.414rem;
@@ -92,7 +89,6 @@ const STYLES_H3 = css`
 const STYLES_LINK = css`
   font-family: "inter-medium";
   color: ${Constants.colors.teal};
-  font-size: 1.725rem;
   text-decoration: underline;
   cursor: pointer;
 
@@ -165,8 +161,6 @@ const STYLES_CARD = css`
   max-width: 568px;
   margin: 24px 24px 0 24px;
   transition: transform ease 200ms;
-  transform: scale(1);
-  box-shadow: inset 0 0 0 2px #ececec;
   text-align: center;
 `;
 
@@ -199,7 +193,6 @@ const STYLES_CARD_BOTTOM_LEFT_TITLE = css`
 const STYLES_CARD_BOTTOM_LEFT = css`
   min-width: 10%;
   width: 100%;
-  padding-right: 24px;
 `;
 
 const STYLES_CARD_BOTTOM_RIGHT = css`
@@ -217,10 +210,7 @@ export default class IndexPage extends React.Component {
         </Head>
         <Navigation eventURL={EVENT_URL} />
 
-        <div
-          className={STYLES_SECTION_HERO}
-          style={{ backgroundImage: `url('/static/bg-6.png')` }}
-        >
+        <div className={STYLES_SECTION_HERO}>
           <div className={STYLES_CARD}>
             <div className={STYLES_CARD_TOP}>
               <SVG.Logo height="144px" />

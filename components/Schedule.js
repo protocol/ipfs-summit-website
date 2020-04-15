@@ -14,7 +14,7 @@ const STYLES_ROW = css`
 
 const STYLES_LEFT = css`
   flex-shrink: 0;
-  font-size: 1.717rem;
+  font-size: 1.414rem;
   min-width: 126px;
 `;
 
@@ -26,13 +26,13 @@ const STYLES_MIDDLE = css`
 `;
 
 const STYLES_NAME = css`
-  font-size: 1.717rem;
+  font-size: 1.414rem;
   font-family: "inter-semi-bold";
   text-align: left;
 `;
 
 const STYLES_PARAGRAPH = css`
-  font-size: 1.717rem;
+  font-size: 1.414rem;
   text-align: left;
   width: 100%;
   margin-top: 24px;
