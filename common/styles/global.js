@@ -50,21 +50,22 @@ export default () => injectGlobal`
   }
 
   html, body {
-  background-color: ${Constants.colors.white};
-  color: ${Constants.brand.dark};
-    font-size: 16px;
-    font-family: 'inter-regular', -apple-system, BlinkMacSystemFont, arial, sans-serif;
+  background-color: ${Constants.colors.darkTeal};
+  color: ${Constants.colors.gray};
 
-    @media (max-width: 1440px) {
-      font-size: 14px;
-    }
+  font-size: 16px;
+  font-family: 'inter-regular', -apple-system, BlinkMacSystemFont, arial, sans-serif;
 
-    @media (max-width: 768px) {
-      font-size: 12px;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
+  @media (max-width: 1440px) {
+    font-size: 14px;
   }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
 `;

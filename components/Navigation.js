@@ -7,14 +7,13 @@ import { css } from "react-emotion";
 
 const STYLES_FIXED_NAVIGATION = css`
   height: 72px;
-  box-shadow: inset 0 -2px 0 #ececec;
+  box-shadow: inset 0 -2px 0 ${Constants.colors.darkBorder};
   width: 100%;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  background-color: ${Constants.colors.white};
-  color: ${Constants.colors.black};
+  background-color: ${Constants.colors.darkTeal};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +36,8 @@ const STYLES_MIDDLE = css`
 
 const STYLES_RIGHT = css`
   text-decoration: none;
-  color: ${Constants.colors.black};
+  color: ${Constants.colors.gray};
+  letter-spacing: 0.2px;
   flex-shrink: 0;
   padding: 0 24px 0 24px;
   display: inline-flex;
@@ -52,12 +52,13 @@ const STYLES_RIGHT = css`
 
 const STYLES_ITEM = css`
   text-decoration: none;
-  color: ${Constants.colors.black};
+  color: ${Constants.colors.gray};
+  letter-spacing: 0.2px;
   cursor: pointer;
   transition: 200ms ease color;
 
   :visited {
-    color: ${Constants.colors.black};
+    color: ${Constants.colors.gray};
   }
 
   :hover {
@@ -67,13 +68,13 @@ const STYLES_ITEM = css`
 
 const STYLES_LOGO = css`
   text-decoration: none;
-  color: ${Constants.colors.black};
+  color: ${Constants.colors.gray};
   cursor: pointer;
   transition: 200ms ease color;
   display: flex;
 
   :visited {
-    color: ${Constants.colors.black};
+    color: ${Constants.colors.gray};
   }
 
   :hover {

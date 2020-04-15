@@ -2,62 +2,74 @@ import * as React from "react";
 import * as Strings from "~/common/strings";
 import * as Constants from "~/common/constants";
 
-import Hexagon from "react-hexagon";
 import { css } from "react-emotion";
 
 const STYLES_ROW = css`
   max-width: 816px;
-  margin: 3rem auto 0 auto;
+  width: 100%;
+  margin-top: 3rem;
   padding: 0 24px 0 24px;
+`;
 
-  svg {
-    width: 228px;
-    height: 228px;
+const STYLES_SPEAKER = css`
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 33.33%;
+`;
 
-    polygon {
-      stroke: ${Constants.colors.orange} !important;
-    }
-  }
+const STYLES_AVATAR = css`
+  height: 64px;
+  width: 64px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+`;
+
+const STYLES_RIGHT = css`
+  padding-left: 24px;
+  min-width: 10%;
+  width: 100%;
+  font-size: 1rem;
+`;
+
+const STYLES_TITLE = css`
+  margin-top: 8px;
+  font-family: "inter-semi-bold";
+  color: ${Constants.colors.white};
+`;
+
+const STYLES_ORGANIZATION = css`
+  margin-top: 4px;
 `;
 
 const Avatar = (props) => {
-  const height = props.width / 1.156069;
-  const border = `${height * 0.5}px solid transparent`;
-
   return (
-    <div
-      className={STYLES_HEXAGON}
-      style={{
-        backgroundImage: `url('/static/${props.src}')`,
-        width: props.width,
-      }}
-    >
+    <div className={STYLES_SPEAKER}>
       <div
-        className={STYLES_HEXAGON_TOP}
+        className={STYLES_AVATAR}
         style={{
-          width: props.width,
-          height: props.width / 1.156069,
-          borderBottom: border,
+          backgroundImage: `url('/static/${props.photo}')`,
         }}
       />
-      <div
-        className={STYLES_HEXAGON_BOTTOM}
-        style={{ width: props.width, borderTop: border }}
-      />
+      <div className={STYLES_RIGHT}>
+        <div className={STYLES_TITLE}>{props.name}</div>
+        <div className={STYLES_ORGANIZATION}>{props.organization}</div>
+      </div>
     </div>
   );
 };
 
 export default (props) => {
-  return (
-    <div className={STYLES_ROW}>
-      <Hexagon backgroundImage="/static/adrian.jpg" backgroundScale="1.1" />
-      <Hexagon backgroundImage="/static/colin.jpg" backgroundScale="1.1" />
-      <Hexagon backgroundImage="/static/juan.png" backgroundScale="1.1" />
-      <Hexagon backgroundImage="/static/molly.jpeg" backgroundScale="1.1" />
-      <Hexagon backgroundImage="/static/pooja.jpeg" backgroundScale="1.1" />
-      <Hexagon backgroundImage="/static/steven.png" backgroundScale="1.1" />
-      <Hexagon backgroundImage="/static/yuni.jpg" backgroundScale="1.1" />
-    </div>
-  );
+  const speakers = Object.keys(props.data);
+  const entities = speakers.map((s) => {
+    const each = props.data[s];
+
+    return <Avatar key={each.name} {...each} />;
+  });
+
+  return <div className={STYLES_ROW}>{entities}</div>;
 };

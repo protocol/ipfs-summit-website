@@ -14,7 +14,7 @@ import Schedule from "~/components/Schedule";
 const EVENT_URL = `https://www.eventbrite.com/e/ipfs-pinning-summit-registration-102720606098`;
 
 const STYLES_SECTION = css`
-  padding: 64px 24px 64px 24px;
+  padding: 96px 24px 64px 24px;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -24,7 +24,7 @@ const STYLES_SECTION = css`
 `;
 
 const STYLES_SECTION_HERO = css`
-  padding: 64px 24px 64px 24px;
+  padding: 96px 24px 64px 24px;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -34,18 +34,38 @@ const STYLES_SECTION_HERO = css`
 `;
 
 const STYLES_INFO = css`
-  color: ${Constants.colors.black};
   padding: 16px;
   font-size: 1.414rem;
   line-height: 1.5;
-  border-radius: 0px 0px 4px 4px;
+  text-align: center;
+  max-width: 568px;
+`;
+
+const STYLES_INFO_HERO = css`
+  padding: 16px;
+  font-size: 1.717rem;
+  line-height: 1.5;
   text-align: center;
   max-width: 568px;
 
   strong {
     font-family: "inter-semi-bold";
     font-weight: 400;
-    color: ${Constants.colors.darkTeal};
+    color: ${Constants.colors.teal};
+  }
+`;
+
+const STYLES_INFO_HERO_BOTTOM = css`
+  padding: 16px;
+  font-size: 1.414rem;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 568px;
+
+  strong {
+    font-family: "inter-semi-bold";
+    font-weight: 400;
+    color: ${Constants.colors.teal};
   }
 `;
 
@@ -60,21 +80,18 @@ const STYLES_H1 = css`
 `;
 
 const STYLES_H2 = css`
-  font-family: "inter-semi-bold";
-  font-weight: 400;
-  font-size: 1.797rem;
-  line-height: 1.4;
-  max-width: 640px;
-  margin-top: 1.414rem;
-  padding: 24px;
-  text-align: center;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: ${Constants.colors.teal};
+  text-transform: uppercase;
+  margin: 2px 0 4px 0;
 `;
 
 const STYLES_H3 = css`
   font-family: "inter-regular";
   font-weight: 400;
   font-size: 1.414rem;
-  line-height: 1.4;
+  line-height: 1.5;
   max-width: 768px;
   margin-top: 1.414rem;
   padding: 24px;
@@ -82,6 +99,7 @@ const STYLES_H3 = css`
 
   strong {
     font-family: "inter-semi-bold";
+    color: ${Constants.colors.white};
     font-weight: 400;
   }
 `;
@@ -97,23 +115,23 @@ const STYLES_LINK = css`
   }
 
   :hover {
-    color: ${Constants.colors.darkTeal};
+    color: ${Constants.colors.white};
   }
 `;
 
 const STYLES_BUTTON = css`
   font-family: "inter-medium";
-  font-size: 20px;
+  font-size: 1rem;
   color: ${Constants.colors.white};
   text-decoration: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: ${Constants.colors.darkTeal};
-  border-radius: 48px;
+  background: ${Constants.colors.orange};
+  border-radius: 4px;
   height: 48px;
-  padding: 0 16px 0 16px;
+  padding: 0 24px 0 24px;
   transition: 200ms ease all;
   transform: scale(1);
 
@@ -155,8 +173,6 @@ const STYLES_ROW = css`
 `;
 
 const STYLES_CARD = css`
-  background-color: ${Constants.colors.white};
-  border-radius: 8px;
   width: 100%;
   max-width: 568px;
   margin: 24px 24px 0 24px;
@@ -165,7 +181,6 @@ const STYLES_CARD = css`
 `;
 
 const STYLES_CARD_TOP = css`
-  border-radius: 8px 8px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,8 +189,6 @@ const STYLES_CARD_TOP = css`
 `;
 
 const STYLES_CARD_BOTTOM = css`
-  color: ${Constants.colors.black};
-  border-radius: 0px;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -184,10 +197,20 @@ const STYLES_CARD_BOTTOM = css`
   font-size: 1.414rem;
 `;
 
-const STYLES_CARD_BOTTOM_LEFT_TITLE = css`
-  font-family: "inter-semi-bold";
+const STYLES_CARD_BOTTOM_TOP_TITLE = css`
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: ${Constants.colors.teal};
+  text-transform: uppercase;
   margin: 2px 0 4px 0;
-  font-size: 1.717rem;
+`;
+
+const STYLES_CARD_BOTTOM_BOTTOM_TITLE = css`
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: ${Constants.colors.teal};
+  text-transform: uppercase;
+  margin: 2px 0 4px 0;
 `;
 
 const STYLES_CARD_BOTTOM_LEFT = css`
@@ -217,24 +240,26 @@ export default class IndexPage extends React.Component {
             </div>
             <div className={STYLES_CARD_BOTTOM}>
               <div className={STYLES_CARD_BOTTOM_LEFT}>
-                <div className={STYLES_CARD_BOTTOM_LEFT_TITLE}>
+                <div className={STYLES_CARD_BOTTOM_TOP_TITLE}>
                   IPFS Pinning Summit
                 </div>
-                <div>May 7th — 8th</div>
+                <div className={STYLES_CARD_BOTTOM_BOTTOM_TITLE}>
+                  May 7th — 8th
+                </div>
               </div>
             </div>
             <div className={STYLES_INFO}>
-              <div>
+              <div className={STYLES_INFO_HERO}>
                 The IPFS Pinning Summit is a 2-day virtual conference designed
                 for the{" "}
                 <strong>
                   infrastructure and service providers of the distributed web.
                 </strong>
-                <br />
-                <br />
-                Join core IPFS and Filecoin developers to
-                discuss learnings, pain points, and new opportunities for
-                distributed web infrastructure.
+              </div>
+              <div className={STYLES_INFO_HERO_BOTTOM}>
+                Join core IPFS and Filecoin developers to discuss learnings,
+                pain points, and new opportunities for distributed web
+                infrastructure.
                 <br />
                 <br />
                 <a
@@ -272,13 +297,7 @@ export default class IndexPage extends React.Component {
           <H3>Uploaded videos and keynotes will appear here.</H3>
         </div>
 
-        <div
-          className={STYLES_SECTION}
-          style={{
-            background: `linear-gradient(rgb(249, 249, 249), rgb(232, 234, 255))`,
-          }}
-          id="about"
-        >
+        <div className={STYLES_SECTION} id="about">
           <H2>About</H2>
           <H3>
             The IPFS Pinning Summit was co-organized by the{" "}

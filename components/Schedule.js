@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as Strings from "~/common/strings";
+import * as Constants from "~/common/constants";
 
 import { css } from "react-emotion";
 
@@ -26,6 +27,7 @@ const STYLES_MIDDLE = css`
 `;
 
 const STYLES_NAME = css`
+  color: ${Constants.colors.white};
   font-size: 1.414rem;
   font-family: "inter-semi-bold";
   text-align: left;

@@ -1,9 +1,10 @@
 export const colors = {
   white: "#f9f9f9",
-  gray: "#f1f1f1",
+  gray: "#B7C4CF",
   black: "#2D2926",
   orange: "rgb(253, 87, 1)",
   teal: "#469ea2",
+  darkBorder: "#072C4B",
   darkTeal: "#041727",
 };
 
