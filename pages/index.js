@@ -32,28 +32,42 @@ const STYLES_SECTION_HERO = css`
 
 const STYLES_FIXED_NAVIGATION = css`
   height: 72px;
-  border-bottom: 2px solid ${Constants.brand.dark};
+  box-shadow: inset 0 -2px 0 #4d5260;
   width: 100%;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  background-color: ${Constants.colors.white};
-  color: ${Constants.brand.dark};
+  background-color: ${Constants.brand.dark};
+  color: ${Constants.colors.white};
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: "inter-semi-bold";
 `;
 
+const STYLES_INFO = css`
+  color: ${Constants.colors.black};
+  background: ${Constants.colors.white};
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  font-size: 1.414rem;
+  line-height: 1.5;
+  border-radius: 4px;
+  text-align: left;
+  margin-top: 24px;
+  max-width: 568px;
+
+  strong {
+    font-family: "inter-semi-bold";
+    font-weight: 400;
+    color: ${Constants.colors.orange};
+  }
+`;
+
 const STYLES_LEFT = css`
   padding-left: 24px;
   flex-shrink: 0;
-  min-width: 188px;
-
-  @media (max-width: 768px) {
-    min-width: auto;
-  }
 `;
 
 const STYLES_MIDDLE = css`
@@ -62,20 +76,12 @@ const STYLES_MIDDLE = css`
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    * {
-      display: none;
-    }
-  }
+  justify-content: flex-start;
 `;
 
 const STYLES_RIGHT = css`
   flex-shrink: 0;
   padding: 0 24px 0 24px;
-  background: rgb(253, 87, 1);
-  height: 72px;
   text-decoration: none;
   color: ${Constants.colors.white};
   display: inline-flex;
@@ -89,68 +95,30 @@ const STYLES_RIGHT = css`
 `;
 
 const STYLES_ITEM = css`
-  margin: 0 24px 0 24px;
-  text-decoration: underline;
-  color: ${Constants.brand.dark};
-  cursor: pointer;
-  transition: 200ms ease color;
-
-  :visited {
-    color: ${Constants.brand.dark};
-  }
-
-  :hover {
-    color: ${Constants.brand.color};
-  }
-`;
-
-const STYLES_CTA_ITEM = css`
   text-decoration: none;
   color: ${Constants.colors.white};
   cursor: pointer;
   transition: 200ms ease color;
 
   :visited {
-    color: ${Constants.colors.white};
+    color: ${Constants.colors.gray};
   }
 
   :hover {
-    color: ${Constants.colors.white};
+    color: ${Constants.colors.orange};
   }
 `;
 
 const STYLES_LOGO = css`
-  text-decoration: underline;
-  color: ${Constants.brand.dark};
+  text-decoration: none;
+  color: ${Constants.colors.white};
   cursor: pointer;
   transition: 200ms ease color;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  border-radius: 188px;
-  height: 224px;
-  width: 224px;
-  background: #041727;
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    height: 88px;
-  }
-
-  @media (max-width: 768px) {
-    height: 88px;
-    width: 88px;
-    top: 24px;
-
-    svg {
-      height: 32px;
-    }
-  }
+  padding-top: 4px;
 
   :visited {
-    color: ${Constants.brand.dark};
+    color: ${Constants.colors.white};
   }
 
   :hover {
@@ -160,8 +128,8 @@ const STYLES_LOGO = css`
 
 const STYLES_H1 = css`
   font-family: "inter-semi-bold";
-  font-size: 3.998rem;
-  max-width: 640px;
+  font-size: 2.444rem;
+  max-width: 768px;
   line-height: 1.1;
   font-weight: 400;
   padding: 24px;
@@ -188,10 +156,6 @@ const STYLES_H3 = css`
   margin-top: 1.414rem;
   padding: 24px;
   text-align: center;
-
-  strong {
-    font-family: "inter-medium";
-  }
 `;
 
 const STYLES_LINK = css`
@@ -212,7 +176,7 @@ const STYLES_LINK = css`
 
 const STYLES_BUTTON = css`
   font-family: "inter-medium";
-  font-size: 24px;
+  font-size: 16px;
   color: ${Constants.colors.white};
   text-decoration: none;
   cursor: pointer;
@@ -220,16 +184,18 @@ const STYLES_BUTTON = css`
   align-items: center;
   justify-content: center;
   background: rgb(253, 87, 1);
-  border-radius: 64px;
-  height: 64px;
-  padding: 0 24px 0 24px;
+  border-radius: 48px;
+  height: 48px;
+  padding: 0 16px 0 16px;
   transition: 200ms ease all;
+  transform: scale(1);
 
   :visited {
     color: ${Constants.colors.white};
   }
 
   :hover {
+    transform: scale(1.1);
     color: ${Constants.colors.white};
   }
 `;
@@ -329,6 +295,68 @@ const STYLES_ROW = css`
   max-width: 1440px;
 `;
 
+const STYLES_CARD = css`
+  border-radius: 8px;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 568px;
+  margin: 24px 24px 0 24px;
+  transition: transform ease 200ms;
+  transform: scale(1);
+
+  :hover {
+    transform: scale(1.15);
+  }
+`;
+
+const STYLES_CARD_TOP = css`
+  background: #42275a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #734b6d,
+    #42275a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #734b6d,
+    #42275a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 8px 8px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 48px 24px 48px 24px;
+`;
+
+const STYLES_CARD_BOTTOM = css`
+  color: ${Constants.colors.black};
+  background: ${Constants.colors.white};
+  border-radius: 0px 0px 8px 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.414rem;
+`;
+
+const STYLES_CARD_BOTTOM_LEFT_TITLE = css`
+  font-family: "inter-semi-bold";
+  margin: 2px 0 4px 0;
+`;
+
+const STYLES_CARD_BOTTOM_LEFT = css`
+  min-width: 10%;
+  width: 100%;
+  padding-right: 24px;
+`;
+
+const STYLES_CARD_BOTTOM_RIGHT = css`
+  flex-shrink: 0;
+`;
+
 export default class IndexPage extends React.Component {
   state = { selection: true, participating: true };
 
@@ -340,53 +368,83 @@ export default class IndexPage extends React.Component {
         </Head>
         <div className={STYLES_FIXED_NAVIGATION}>
           <span className={STYLES_LEFT}>
-            <a className={STYLES_LOGO} href="/">
-              <SVG.Logo />
+            <a
+              className={STYLES_LOGO}
+              target="_blank"
+              href="https://protocol.ai"
+            >
+              <SVG.WhiteLogo height="32px" />
             </a>
           </span>
           <span className={STYLES_MIDDLE}>
-            <a className={STYLES_ITEM} href="#schedule">
+            <a
+              className={STYLES_ITEM}
+              style={{ marginLeft: 48 }}
+              href="#schedule"
+            >
               Schedule
             </a>
-            <a className={STYLES_ITEM} href="#watch">
+            <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">
               Watch
             </a>
-            <a className={STYLES_ITEM} href="#speakers">
+            <a
+              className={STYLES_ITEM}
+              style={{ marginLeft: 24 }}
+              href="#speakers"
+            >
               Speakers
             </a>
-            <a className={STYLES_ITEM} href="#about">
+            <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#about">
               About
             </a>
           </span>
           <span className={STYLES_RIGHT}>
-            <a className={STYLES_CTA_ITEM} target="_blank" href={EVENT_URL}>
-              Register Now
+            <a className={STYLES_ITEM} target="_blank" href={EVENT_URL}>
+              Register
             </a>
           </span>
         </div>
 
-        <div className={STYLES_SECTION_HERO}>
-          <H1 style={{ paddingTop: 88 }}>IPFS Pinning Summit</H1>
-          <H3>
-            April 23rd — 24th
-            <br />
-            <br /> The IPFS Pinning Summit is a 2-day virtual conference
-            designed for the{" "}
-            <strong>
-              infrastructure and service providers of the distributed web.
-            </strong>{" "}
-            Join fellow attendees and core IPFS and Filecoin developers to
-            discuss learnings, pain points, and new opportunities for
-            distributed web infrastructure.
-          </H3>
+        <div
+          className={STYLES_SECTION_HERO}
+          style={{ backgroundImage: `url('/static/bg.png')` }}
+        >
+          <div className={STYLES_CARD}>
+            <div className={STYLES_CARD_TOP}>
+              <SVG.Logo height="188px" />
+            </div>
+            <div className={STYLES_CARD_BOTTOM}>
+              <div className={STYLES_CARD_BOTTOM_LEFT}>
+                <div className={STYLES_CARD_BOTTOM_LEFT_TITLE}>
+                  IPFS Pinning Summit
+                </div>
+                <div>April 23rd — 24th</div>
+              </div>
+              <div className={STYLES_CARD_BOTTOM_RIGHT}>
+                <a className={STYLES_BUTTON} href={EVENT_URL}>
+                  Register now
+                </a>
+              </div>
+            </div>
+          </div>
 
-          <a
-            className={STYLES_BUTTON}
-            style={{ marginTop: 24, marginBottom: 88 }}
-            href={EVENT_URL}
-          >
-            Register Now
-          </a>
+          <div className={STYLES_INFO} style={{ backgroundColor: "#F4F4F4" }}>
+            <div>
+              The IPFS Pinning Summit is a 2-day virtual conference designed for
+              the{" "}
+              <strong>
+                infrastructure and service providers of the distributed web.
+              </strong>
+            </div>
+          </div>
+
+          <div className={STYLES_INFO} style={{ backgroundColor: "#E6E6E6" }}>
+            <div>
+              Join fellow attendees and core IPFS and Filecoin developers to
+              discuss learnings, pain points, and new opportunities for
+              distributed web infrastructure.
+            </div>
+          </div>
         </div>
 
         <div className={STYLES_SECTION} id="schedule">

@@ -1,4 +1,11 @@
-export const colors = { white: "#f9f9f9", gray: "#f1f1f1", black: "#2D2926" };
+export const colors = {
+  white: "#f9f9f9",
+  gray: "#f1f1f1",
+  black: "#2D2926",
+  orange: "rgb(253, 87, 1)",
+  teal: "#469ea2",
+  darkTeal: "#041727",
+};
 
 export const theme = {
   foreground: "#FFF",
