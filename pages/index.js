@@ -232,7 +232,7 @@ export default class IndexPage extends React.Component {
                 </strong>
                 <br />
                 <br />
-                Join fellow attendees and core IPFS and Filecoin developers to
+                Join core IPFS and Filecoin developers to
                 discuss learnings, pain points, and new opportunities for
                 distributed web infrastructure.
                 <br />
