@@ -1,43 +1,43 @@
 export const Presenters = {
   "molly-mackinlay": {
     name: "Molly Mackinlay",
-    organization: "Protocol Labs",
-    photo: "molly.jpeg",
+    organization: "Project Lead, IPFS",
+    photo: "avatar-molly-mackinlay.jpg",
   },
   "pooja-shah": {
     name: "Pooja Shah",
-    organization: "Protocol Labs",
-    photo: "pooja.jpeg",
+    organization: "Project Operator, Filecoin",
+    photo: "avatar-pooja-shah.jpg",
   },
   "steven-allen": {
     name: "Steven Allen",
-    organization: "Protocol Labs",
-    photo: "steven.png",
+    organization: "Tech Lead, IPFS",
+    photo: "avatar-steven-allen.png",
   },
   "juan-benet": {
     name: "Juan Benet",
-    organization: "Protocol Labs",
-    photo: "juan.png",
+    organization: "Founder and CEO, Protocol Labs",
+    photo: "avatar-juan-benet.png",
   },
   "colin-evran": {
     name: "Colin Evran",
     organization: "Protocol Labs",
-    photo: "colin.jpg",
+    photo: "avatar-colin-evran.jpg",
   },
   "adrian-lanzafame": {
     name: "Adrian Lanzafame",
     organization: "Protocol Labs",
-    photo: "adrian.jpg",
+    photo: "avatar-adrian-lanzafame.png",
   },
   "yuni-graham": {
     name: "Yuni Graham",
     organization: "Protocol Labs",
-    photo: "yuni.jpg",
+    photo: "avatar-yuni-graham.jpg",
   },
   "andrew-hill": {
     name: "Andrew Hill",
-    organization: "Textile",
-    photo: "andrew-hill.jpg",
+    organization: "Co-founder and CEO, Textile",
+    photo: "avatar-andrew-hill.jpg",
   },
 };
 
@@ -252,5 +252,5 @@ export const ScheduleTwo = [
     value: null,
     duration: 20,
     presenters: null,
-  },  
+  },
 ];

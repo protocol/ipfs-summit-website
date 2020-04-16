@@ -43,10 +43,11 @@ const STYLES_INFO = css`
 
 const STYLES_INFO_HERO = css`
   padding: 16px;
-  font-size: 1.717rem;
+  font-size: 2rem;
   line-height: 1.5;
   text-align: center;
   max-width: 568px;
+  color: ${Constants.colors.white};
 
   strong {
     font-family: "inter-semi-bold";
@@ -91,7 +92,7 @@ const STYLES_H3 = css`
   font-family: "inter-regular";
   font-weight: 400;
   font-size: 1.414rem;
-  line-height: 1.5;
+  line-height: 1.75;
   max-width: 768px;
   margin-top: 1.414rem;
   padding: 24px;
@@ -226,10 +227,50 @@ export default class IndexPage extends React.Component {
   state = { selection: true, participating: true };
 
   render() {
+    const title = "IPFS Pinning Summit — May 7th — 8th (2020)";
+    const description =
+      "The IPFS Pinning Summit is a 2-day virtual conference designed for the infrastructure and service providers of the distributed web.";
+    const url = "https://ipfspinningsummit.com";
+
     return (
       <React.Fragment>
         <Head>
-          <title>IPFS Pinning Summit</title>
+          <title>{title}</title>
+          <meta name="title" content={title} />
+          <meta name="description" content={description} />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={url} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content="/static/social.png" />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content={url} />
+          <meta property="twitter:title" content={title} />
+          <meta property="twitter:description" content={description} />
+          <meta property="twitter:image" content="/static/social.png" />
+
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+
+          <link rel="shortcut icon" href="/static/favicon.ico" />
         </Head>
         <Navigation eventURL={EVENT_URL} />
 

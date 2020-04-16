@@ -17,6 +17,10 @@ const STYLES_LEFT = css`
   flex-shrink: 0;
   font-size: 1.414rem;
   min-width: 126px;
+
+  @media (max-width: 768px) {
+    min-width: 72px;
+  }
 `;
 
 const STYLES_MIDDLE = css`
@@ -29,12 +33,11 @@ const STYLES_MIDDLE = css`
 const STYLES_NAME = css`
   color: ${Constants.colors.white};
   font-size: 1.414rem;
-  font-family: "inter-semi-bold";
   text-align: left;
 `;
 
 const STYLES_PARAGRAPH = css`
-  font-size: 1.414rem;
+  font-size: 1.2rem;
   text-align: left;
   width: 100%;
   margin-top: 24px;
@@ -42,9 +45,15 @@ const STYLES_PARAGRAPH = css`
 `;
 
 const STYLES_META = css`
+  display: inline-flex;
+  border-radius: 8px;
   margin-top: 24px;
+  line-height: 1rem;
   font-family: "inter-medium";
   font-size: 1rem;
+  padding: 8px 12px 8px 12px;
+  background: #000;
+  color: ${Constants.colors.white};
 `;
 
 const STYLES_PRESENTER = css`
@@ -65,7 +74,7 @@ const STYLES_PRESENTER_AVATAR = css`
 `;
 
 const STYLES_PRESENTER_NAME = css`
-  font-family: "inter-semi-bold";
+  color: ${Constants.colors.teal};
   padding-left: 16px;
   min-width: 10%;
   width: 100%;
