@@ -97,11 +97,11 @@ export default (props) => {
         <a className={STYLES_ITEM} style={{ marginLeft: 32 }} href="#schedule">
           Schedule
         </a>
-        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">
-          Watch
-        </a>
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#speakers">
           Speakers
+        </a>
+        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">
+          Watch
         </a>
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#about">
           About
