@@ -21,12 +21,12 @@ export const Presenters = {
   },
   "colin-evran": {
     name: "Colin Evran",
-    organization: "Protocol Labs",
+    organization: "Filecoin",
     photo: "avatar-colin-evran.jpg",
   },
   "adrian-lanzafame": {
     name: "Adrian Lanzafame",
-    organization: "Protocol Labs",
+    organization: "IPFS Cluster",
     photo: "avatar-adrian-lanzafame.png",
   },
   "yuni-graham": {
