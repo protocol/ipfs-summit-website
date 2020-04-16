@@ -255,19 +255,19 @@ export default class IndexPage extends React.Component {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/favicon-32x32.png"
+            href="/static/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="96x96"
-            href="/favicon-96x96.png"
+            href="/static/favicon-96x96.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/favicon-16x16.png"
+            href="/static/favicon-16x16.png"
           />
 
           <link rel="shortcut icon" href="/static/favicon.ico" />
