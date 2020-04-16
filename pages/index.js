@@ -227,7 +227,7 @@ export default class IndexPage extends React.Component {
   state = { selection: true, participating: true };
 
   render() {
-    const title = "IPFS Pinning Summit — May 7th — 8th (2020)";
+    const title = "IPFS Pinning Summit (May 7th - 8th) (2020)";
     const description =
       "The IPFS Pinning Summit is a 2-day virtual conference designed for the infrastructure and service providers of the distributed web.";
     const url = "https://ipfspinningsummit.com";
