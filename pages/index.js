@@ -185,7 +185,7 @@ const STYLES_CARD_TOP = css`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 48px 24px 48px 24px;
+  padding: 48px 24px 0px 24px;
 `;
 
 const STYLES_CARD_BOTTOM = css`

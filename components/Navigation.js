@@ -17,7 +17,6 @@ const STYLES_FIXED_NAVIGATION = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "inter-semi-bold";
 `;
 
 const STYLES_LEFT = css`
@@ -95,7 +94,7 @@ export default (props) => {
         </a>
       </span>
       <span className={STYLES_MIDDLE}>
-        <a className={STYLES_ITEM} style={{ marginLeft: 48 }} href="#schedule">
+        <a className={STYLES_ITEM} style={{ marginLeft: 32 }} href="#schedule">
           Schedule
         </a>
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">
