@@ -313,6 +313,13 @@ export default class IndexPage extends React.Component {
           </div>
         </div>
 
+        <div className={STYLES_SECTION} id="schedule">
+          <H2>Speakers & Schedule</H2>
+          <H3>
+            We will announce the current schedule and speaker list shortly.
+          </H3>
+        </div>
+
         <div className={STYLES_SECTION} id="about">
           <H2>About</H2>
           <H3>
