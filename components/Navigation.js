@@ -94,6 +94,12 @@ export default (props) => {
         </a>
       </span>
       <span className={STYLES_MIDDLE}>
+        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#organizations">
+          Organizations
+        </a>
+        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#schedule">
+          Schedule
+        </a>
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#about">
           About
         </a>

@@ -41,6 +41,64 @@ export const Presenters = {
   },
 };
 
+export const Organizations = {
+  "ipfs": {
+    name: "IPFS",
+    logo: "logo-ipfs.png",
+    url: "https://ipfs.io/",
+  },
+  "filecoin": {
+    name: "Filecoin",
+    logo: "logo-filecoin.png",
+    url: "https://filecoin.io/",
+  },
+  "protocol-labs": {
+    name: "Protocol Labs",
+    logo: "logo-protocol-labs.png",
+    url: "https://protocol.ai/",
+  },
+  "infura": {
+    name: "Infura",
+    logo: "logo-infura.png",
+    url: "https://infura.io/",
+  },
+  "textile": {
+    name: "Textile",
+    logo: "logo-textile.png",
+    url: "https://textile.io/",
+  },
+  "pinata": {
+    name: "Pinata",
+    logo: "logo-pinata.png",
+    url: "https://pinata.cloud/",
+  },
+  "fleek": {
+    name: "Fleek",
+    logo: "logo-fleek.jpg",
+    url: "https://fleek.co/",
+  },
+  "unstoppable-domains": {
+    name: "Unstoppable Domains",
+    logo: "logo-unstoppable-domains.png",
+    url: "https://unstoppabledomains.com/",
+  },
+  "3box": {
+    name: "3box",
+    logo: "logo-3box.png",
+    url: "https://3box.io/",
+  },
+  "chainsafe": {
+    name: "ChainSafe",
+    logo: "logo-chainsafe.png",
+    url: "https://chainsafe.io/",
+  },
+  "owl": {
+    name: "Open Work Labs",
+    logo: "logo-owl.png",
+    url: "https://www.openworklabs.com/",
+  },
+}
+
 export const ScheduleOne = [
   {
     time: "9:45 AM",

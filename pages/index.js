@@ -10,6 +10,7 @@ import { css } from "react-emotion";
 import Navigation from "~/components/Navigation";
 import Speakers from "~/components/Speakers";
 import Schedule from "~/components/Schedule";
+import Organizations from "~/components/Organizations";
 
 const EVENT_URL = `https://www.eventbrite.com/e/ipfs-pinning-summit-registration-102720606098`;
 
@@ -296,7 +297,7 @@ export default class IndexPage extends React.Component {
                 </strong>
               </div>
               <div className={STYLES_INFO_HERO_BOTTOM}>
-                Join core IPFS and Filecoin developers to discuss learnings,
+                Join core IPFS, Filecoin, and Pinning Service developers to discuss learnings,
                 pain points, and new opportunities for distributed web
                 infrastructure.
                 <br />
@@ -313,31 +314,40 @@ export default class IndexPage extends React.Component {
           </div>
         </div>
 
+        <div className={STYLES_SECTION} id="organizations">  
+          <H2>Organizations</H2> 
+
+          <Organizations data={Fixtures.Organizations} /> 
+
+        </div>  
+
+
         <div className={STYLES_SECTION} id="schedule">
-          <H2>Speakers & Schedule</H2>
+          <H2>Schedule</H2>
           <H3>
-            We will announce the current schedule and speaker list shortly.
+            We will announce the conference schedule shortly.
           </H3>
         </div>
+
 
         <div className={STYLES_SECTION} id="about">
           <H2>About</H2>
           <H3>
             The IPFS Pinning Summit was co-organized by the{" "}
-            <a className={STYLES_LINK} href="#">
-              Filecoin Project
+            <a className={STYLES_LINK} href="https://ipfs.io/">
+              IPFS Project
             </a>{" "}
             and the{" "}
-            <a className={STYLES_LINK} href="#">
-              IPFS Project
+            <a className={STYLES_LINK} href="https://filecoin.io">
+              Filecoin Project
             </a>
             , and was sponsored by{" "}
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://protocol.ai">
               Protocol Labs
             </a>
             .<br />
             <br />
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://ipfs.io">
               IPFS
             </a>{" "}
             is a peer-to-peer network and protocol designed to make the web
@@ -351,7 +361,7 @@ export default class IndexPage extends React.Component {
             communications.
             <br />
             <br />
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://filecoin.io">
               Filecoin
             </a>{" "}
             is a decentralized storage network, powered by a blockchain and a
@@ -364,7 +374,7 @@ export default class IndexPage extends React.Component {
             for humanity’s information.
             <br />
             <br />
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://protocol.ai">
               Protocol Labs
             </a>{" "}
             is a research and development organization that was founded in 2014.
@@ -372,19 +382,19 @@ export default class IndexPage extends React.Component {
             and protocols to upgrade the infrastructure of the internet. Over
             the last few years, Protocol Labs has built and maintained several
             open-source protocols, including{" "}
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://ipfs.io">
               IPFS
             </a>
             ,{" "}
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://libp2p.io">
               libp2p
             </a>
             ,{" "}
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://ipld.io">
               IPLD
             </a>
             , and{" "}
-            <a className={STYLES_LINK} href="#">
+            <a className={STYLES_LINK} href="https://filecoin.io">
               Filecoin
             </a>
             .
