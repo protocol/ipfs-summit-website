@@ -94,15 +94,27 @@ export default (props) => {
         </a>
       </span>
       <span className={STYLES_MIDDLE}>
+
+        <a className={STYLES_ITEM} style={{ marginLeft: 32 }} href="#schedule"> 
+          Schedule  
+        </a>  
+
+        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#speakers"> 
+          Speakers  
+        </a>  
+
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#organizations">
           Organizations
         </a>
-        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#schedule">
-          Schedule
-        </a>
+
+        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">  
+          Watch 
+        </a>  
+
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#about">
           About
         </a>
+        
       </span>
       <span className={STYLES_RIGHT}>
         <a className={STYLES_ITEM} target="_blank" href={props.eventURL}>
