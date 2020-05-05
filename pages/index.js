@@ -78,6 +78,7 @@ const STYLES_H1 = css`
   line-height: 1.1;
   font-weight: 400;
   padding: 24px;
+  text-align: center; 
 `;
 
 const STYLES_H2 = css`
@@ -96,6 +97,7 @@ const STYLES_H3 = css`
   max-width: 768px;
   margin-top: 1.414rem;
   padding: 24px;
+  text-align: center; 
 
   strong {
     font-family: "inter-semi-bold";
@@ -319,17 +321,35 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </div>
+        <div className={STYLES_SECTION} id="schedule">  
+          <H2>May 7th — Schedule</H2> 
 
-        <div className={STYLES_SECTION} id="organizations">
-          <H2>Organizations</H2>
+          <Schedule data={Fixtures.ScheduleOne} />  
+        </div>  
 
-          <Organizations data={Fixtures.Organizations} />
-        </div>
+        <div className={STYLES_SECTION}>  
+          <H2>May 8th — Schedule</H2> 
 
-        <div className={STYLES_SECTION} id="schedule">
-          <H2>Schedule</H2>
-          <H3>We will announce the conference schedule shortly.</H3>
-        </div>
+          <Schedule data={Fixtures.ScheduleTwo} />  
+        </div>  
+
+        <div className={STYLES_SECTION} id="speakers">  
+          <H2>Speakers</H2> 
+
+          <Speakers data={Fixtures.Presenters} /> 
+        </div>  
+
+        <div className={STYLES_SECTION} id="organizations">  
+          <H2>Organizations</H2> 
+
+          <Organizations data={Fixtures.Organizations} /> 
+
+        </div>  
+
+        <div className={STYLES_SECTION} id="watch"> 
+          <H2>Watch</H2>  
+          <H3>Uploaded videos and keynotes will appear here.</H3> 
+        </div>  
 
         <div className={STYLES_SECTION} id="about">
           <H2>About</H2>
