@@ -244,13 +244,19 @@ export default class IndexPage extends React.Component {
           <meta property="og:url" content={url} />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
-          <meta property="og:image" content="/static/social.png" />
+          <meta
+            property="og:image"
+            content="https://ipfspinningsummit.com/static/social.png"
+          />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content={url} />
           <meta property="twitter:title" content={title} />
           <meta property="twitter:description" content={description} />
-          <meta property="twitter:image" content="/static/social.png" />
+          <meta
+            property="twitter:image"
+            content="https://ipfspinningsummit.com/static/social.png"
+          />
 
           <link
             rel="icon"
@@ -299,9 +305,9 @@ export default class IndexPage extends React.Component {
                 </strong>
               </div>
               <div className={STYLES_INFO_HERO_BOTTOM}>
-                Join core IPFS, Filecoin, and Pinning Service developers to discuss learnings,
-                pain points, and new opportunities for distributed web
-                infrastructure.
+                Join core IPFS, Filecoin, and Pinning Service developers to
+                discuss learnings, pain points, and new opportunities for
+                distributed web infrastructure.
                 <br />
                 <br />
                 <a
@@ -315,7 +321,6 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-
         <div className={STYLES_SECTION} id="schedule">  
           <H2>May 7th — Schedule</H2> 
 
