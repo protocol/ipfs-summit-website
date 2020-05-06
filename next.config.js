@@ -5,6 +5,7 @@ module.exports = {
   ) {
     return {
       "/": { page: "/" },
+      "/code-of-conduct": { page: "/code-of-conduct" },
     };
   },
 };
