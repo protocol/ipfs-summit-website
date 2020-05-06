@@ -118,7 +118,122 @@ const H2 = (props) => {
   );
 };
 
-export default class CodeOfConduct extends React.Component {
+export const CodeOfConduct = (props) => {
+  return (
+    <div className={STYLES_SECTION}>
+      <H1>Code of conduct</H1>
+      <P>
+        The IPFS Pinning Summit is a friendly community event where everyone
+        should feel welcome, safe and comfortable to share ideas and engage in
+        open discussion. The IPFS Pinning Summit is dedicated to providing a
+        harassment-free experience for everyone inclusive of gender, gender
+        identity and expression, sexual orientation, disability, physical
+        appearance, body size, race, age, nationality or religion.
+      </P>
+      <P>
+        All participants, speakers, sponsors and staff are required to abide by
+        our Code of Conduct at the IPFS Pinning Summit. Any violations will be
+        dealt with seriously and may include being expelled and banned from the
+        event and its online space. This is to protect the safety of our
+        community and attendees.
+      </P>
+      <H2>Definitions</H2>
+      <P>
+        What do we mean by “harassment”? Harassment includes but isn’t limited
+        to:
+      </P>
+      <UL>
+        <LI>
+          Offensive comments related to gender, gender identity and expression,
+          sexual orientation, disability, mental illness, neurotype, physical
+          appearance, body size, race, age, nationality, religion or belief,
+          marital and civil partnership status, pregnancy or carer or parental
+          status, familial status, veteran status, or citizenship.{" "}
+        </LI>
+        <LI>
+          Unwelcome comments regarding a person’s lifestyle choices and
+          practices, including those related to food, health, parenting, drugs,
+          and employment.{" "}
+        </LI>
+        <LI>
+          Homophobic, biphobic, transphobic, racist, or misogynist slurs or
+          comments.{" "}
+        </LI>
+        <LI>Threats or acts of violence or intimidation.</LI>
+        <LI>Unwelcome sexual attention.</LI>
+        <LI>Sharing/displaying sexual or sexualised images.</LI>
+        <LI>
+          Deliberate “outing” of any aspect of a person’s identity without their
+          consent.
+        </LI>
+        <LI>
+          Harassing photography or recording, including logging online activity
+          for harassment purposes.
+        </LI>
+        <LI>Sustained disruption of discussion.</LI>
+        <LI>Deliberate misgendering.</LI>
+        <LI>Physical contact without consent or after a request to cease.</LI>
+        <LI>Advocating for or encouraging any of the above behaviors.</LI>
+      </UL>
+      <P>
+        Participants asked to stop any harassing behavior are expected to stop
+        immediately.
+      </P>
+      <P>
+        Participants engaging in harassing behavior may be asked to leave the
+        event and online space and may be banned temporarily or indefinitely.
+      </P>
+      <P>
+        If harassment occurs outside an event or online space organised by the
+        IPFS Pinning Summit that may impact the safety of our community, we
+        reserve the right to investigate and take appropriate action, for
+        instance banning from future events.
+      </P>
+      <H2>Reporting</H2>
+      <P>
+        If you are being harassed or made to feel unsafe or unwelcome, please
+        report it as soon as possible. You can help us by reporting any behavior
+        you think might go against the Code of Conduct.
+      </P>
+      <P>
+        Please report any harassing behavior to one of the Event Organizers:
+      </P>
+      <UL>
+        <LI>Jamie Nicholson</LI>
+        <LI>Pooja Shah</LI>
+        <LI>Yuni Graham</LI>
+        <LI>Leela Lindner</LI>
+      </UL>
+      <H2>Reporting & enforcement process</H2>
+      <UL>
+        <LI>
+          {" "}
+          Incident report is taken in a safe, private space at events or in a
+          personal and direct message online.
+        </LI>
+        <LI> Incident responders investigate with the reported person.</LI>
+        <LI>
+          {" "}
+          Incident response team reconvene to discuss an appropriate response.
+        </LI>
+        <LI>Appropriate action is taken.</LI>
+        <LI>
+          Incident responders follow up with the reporter and the reported
+          person.
+        </LI>
+        <LI>Inform community if necessary.</LI>
+        <LI>Debrief and document internally.</LI>
+      </UL>
+      <P>
+        Our Code of Conduct was based on resources from Geek Feminism wiki
+        anti-harassment policy, created by the Ada Initiative and other
+        volunteers, and the XOXO Community Code of Conduct.
+      </P>{" "}
+    </div>
+  );
+};
+
+export default class CodeOfConductPage extends React.Component {
   render() {
     const title = "IPFS Pinning Summit (May 7th - 8th) (2020)";
     const description =
@@ -172,122 +287,7 @@ export default class CodeOfConduct extends React.Component {
           <link rel="shortcut icon" href="/static/favicon.ico" />
         </Head>
         <Navigation eventURL={EVENT_URL} />
-        <div className={STYLES_SECTION}>
-          <H1>Code of conduct</H1>
-          <P>
-            The IPFS Pinning Summit is a friendly community event where everyone
-            should feel welcome, safe and comfortable to share ideas and engage
-            in open discussion. The IPFS Pinning Summit is dedicated to
-            providing a harassment-free experience for everyone inclusive of
-            gender, gender identity and expression, sexual orientation,
-            disability, physical appearance, body size, race, age, nationality
-            or religion.
-          </P>
-          <P>
-            All participants, speakers, sponsors and staff are required to abide
-            by our Code of Conduct at the IPFS Pinning Summit. Any violations
-            will be dealt with seriously and may include being expelled and
-            banned from the event and its online space. This is to protect the
-            safety of our community and attendees.
-          </P>
-          <H2>Definitions</H2>
-          <P>
-            What do we mean by “harassment”? Harassment includes but isn’t
-            limited to:
-          </P>
-          <UL>
-            <LI>
-              Offensive comments related to gender, gender identity and
-              expression, sexual orientation, disability, mental illness,
-              neurotype, physical appearance, body size, race, age, nationality,
-              religion or belief, marital and civil partnership status,
-              pregnancy or carer or parental status, familial status, veteran
-              status, or citizenship.{" "}
-            </LI>
-            <LI>
-              Unwelcome comments regarding a person’s lifestyle choices and
-              practices, including those related to food, health, parenting,
-              drugs, and employment.{" "}
-            </LI>
-            <LI>
-              Homophobic, biphobic, transphobic, racist, or misogynist slurs or
-              comments.{" "}
-            </LI>
-            <LI>Threats or acts of violence or intimidation.</LI>
-            <LI>Unwelcome sexual attention.</LI>
-            <LI>Sharing/displaying sexual or sexualised images.</LI>
-            <LI>
-              Deliberate “outing” of any aspect of a person’s identity without
-              their consent.
-            </LI>
-            <LI>
-              Harassing photography or recording, including logging online
-              activity for harassment purposes.
-            </LI>
-            <LI>Sustained disruption of discussion.</LI>
-            <LI>Deliberate misgendering.</LI>
-            <LI>
-              Physical contact without consent or after a request to cease.
-            </LI>
-            <LI>Advocating for or encouraging any of the above behaviors.</LI>
-          </UL>
-          <P>
-            Participants asked to stop any harassing behavior are expected to
-            stop immediately.
-          </P>
-          <P>
-            Participants engaging in harassing behavior may be asked to leave
-            the event and online space and may be banned temporarily or
-            indefinitely.
-          </P>
-          <P>
-            If harassment occurs outside an event or online space organised by
-            the IPFS Pinning Summit that may impact the safety of our community,
-            we reserve the right to investigate and take appropriate action, for
-            instance banning from future events.
-          </P>
-          <H2>Reporting</H2>
-          <P>
-            If you are being harassed or made to feel unsafe or unwelcome,
-            please report it as soon as possible. You can help us by reporting
-            any behavior you think might go against the Code of Conduct.
-          </P>
-          <P>
-            Please report any harassing behavior to one of the Event Organizers:
-          </P>
-          <UL>
-            <LI>Jamie Nicholson</LI>
-            <LI>Pooja Shah</LI>
-            <LI>Yuni Graham</LI>
-            <LI>Leela Lindner</LI>
-          </UL>
-          <H2>Reporting & enforcement process</H2>
-          <UL>
-            <LI>
-              {" "}
-              Incident report is taken in a safe, private space at events or in
-              a personal and direct message online.
-            </LI>
-            <LI> Incident responders investigate with the reported person.</LI>
-            <LI>
-              {" "}
-              Incident response team reconvene to discuss an appropriate
-              response.
-            </LI>
-            <LI>Appropriate action is taken.</LI>
-            <LI>
-              Incident responders follow up with the reporter and the reported
-              person.
-            </LI>
-            <LI>Inform community if necessary.</LI>
-            <LI>Debrief and document internally.</LI>
-          </UL>
-          <P>
-            Our Code of Conduct was based on resources from Geek Feminism wiki
-            anti-harassment policy, created by the Ada Initiative and other
-            volunteers, and the XOXO Community Code of Conduct.
-          </P>{" "}
-        </div>
+        <CodeOfConduct />
       </React.Fragment>
     );
   }

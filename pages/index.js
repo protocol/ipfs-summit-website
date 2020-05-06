@@ -12,6 +12,8 @@ import Speakers from "~/components/Speakers";
 import Schedule from "~/components/Schedule";
 import Organizations from "~/components/Organizations";
 
+import { CodeOfConduct } from "~/pages/code-of-conduct";
+
 const EVENT_URL = `https://www.eventbrite.com/e/ipfs-pinning-summit-registration-102720606098`;
 
 const STYLES_SECTION = css`
@@ -420,6 +422,8 @@ export default class IndexPage extends React.Component {
             </a>
             .
           </H3>
+
+          <CodeOfConduct />
         </div>
       </React.Fragment>
     );
