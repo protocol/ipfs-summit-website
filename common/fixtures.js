@@ -207,11 +207,11 @@ export const ScheduleOne = [
   },
   {
     time: "1:45 PM PT",
-    name: "Blockchain domains + IPFS = Decentralized Websites",
+    name: "Using Ceramic to control pinsets with DIDs",
     value: 
-      "Traditional DNS has two points of failure - domain names require centralized custodians and content is stored on servers controlled by one company, meaning websites can be taken down. Unstoppable Domains builds domain registries on blockchains. These domains are not part of DNS and are stored in users’ Ethereum wallets. The user signs a message with their private key and writes their IPFS hash to the blockchain, giving them the power to put up or take down their website. Domains work in apps like MyEtherWallet, Trust Wallet, and Opera Browser.",
+      "Ceramic combines merkle linked data with decentralized identifiers to create a public network of mutable documents. In this talk we will explore how this can be used to let any DID control data pinsets.",
     duration: 25,
-    presenters: [Presenters["bradley-kam"]],
+    presenters: [Presenters["joel-thorstensson"]],
   },
   {
     time: "2:15 PM PT",
@@ -222,11 +222,11 @@ export const ScheduleOne = [
   },
   {
     time: "2:30 PM PT",
-    name: "Using Ceramic to control pinsets with DIDs",
+    name: "Blockchain domains + IPFS = Decentralized Websites",
     value: 
-      "Ceramic combines merkle linked data with decentralized identifiers to create a public network of mutable documents. In this talk we will explore how this can be used to let any DID control data pinsets.",
+      "Traditional DNS has two points of failure - domain names require centralized custodians and content is stored on servers controlled by one company, meaning websites can be taken down. Unstoppable Domains builds domain registries on blockchains. These domains are not part of DNS and are stored in users’ Ethereum wallets. The user signs a message with their private key and writes their IPFS hash to the blockchain, giving them the power to put up or take down their website. Domains work in apps like MyEtherWallet, Trust Wallet, and Opera Browser.",
     duration: 25,
-    presenters: [Presenters["joel-thorstensson"]],
+    presenters: [Presenters["bradley-kam"]],
   },
   {
     time: "3:00 PM PT",
