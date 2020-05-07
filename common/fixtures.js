@@ -199,19 +199,19 @@ export const ScheduleOne = [
   },
   {
     time: "1:15 PM PT",
-    name: "Web3 products for the web2 mind",
-    value: 
-      "Offering users new and innovative products without disrupting their daily routine is a challenge for most blockchain projects. Our goal is to offer users a real alternative to storage without users having to think twice about how it works. The goal is to build products for real users, not subject matter experts, and this talk aims to guide us to that path with Filecoin.",
-    duration: 25,
-    presenters: [Presenters["greg-markou"]],
-  },
-  {
-    time: "1:45 PM PT",
     name: "Using Ceramic to control pinsets with DIDs",
     value: 
       "Ceramic combines merkle linked data with decentralized identifiers to create a public network of mutable documents. In this talk we will explore how this can be used to let any DID control data pinsets.",
     duration: 25,
     presenters: [Presenters["joel-thorstensson"]],
+  },
+  {
+    time: "1:45 PM PT",
+    name: "Sending, Receiving, and Validating Filecoin Payments",
+    value: 
+      "If you're an IPFS pinning service, infrastructure provider, or just interested in learning about accepting Filecoin as a form of payment without running your own Filecoin node, this talk is for you! First, we'll construct and send a Filecoin transaction together. Next, we'll locate the transaction on the network in a couple different ways, which might be useful for confirming a customer's payment. We'll wrap up by comparing the different wallet options to expect by Mainnet launch.",
+    duration: 25,
+    presenters: [Presenters["jonathan-schwartz"]],
   },
   {
     time: "2:15 PM PT",
@@ -230,14 +230,6 @@ export const ScheduleOne = [
   },
   {
     time: "3:00 PM PT",
-    name: "Sending, Receiving, and Validating Filecoin Payments",
-    value: 
-      "If you're an IPFS pinning service, infrastructure provider, or just interested in learning about accepting Filecoin as a form of payment without running your own Filecoin node, this talk is for you! First, we'll construct and send a Filecoin transaction together. Next, we'll locate the transaction on the network in a couple different ways, which might be useful for confirming a customer's payment. We'll wrap up by comparing the different wallet options to expect by Mainnet launch.",
-    duration: 25,
-    presenters: [Presenters["jonathan-schwartz"]],
-  },
-  {
-    time: "3:30 PM PT",
     name: "Make Your Home Not Spy On You - Ucam: Indoor Camera with Full Data Sovereignty",
     value: 
       "We're surrounded by billions of Internet-connected and intelligent devices, which are observing and recording us all the time. The dream of a smart, safe, and efficient future is threatened by intrusive surveillance. Ucam, powered by IoTeX, is the next-gen indoor camera that is user-centric, feature-packed, and fully private. By shifting data ownership from corporations to consumers, Ucam ensures value extracted from data is delivered to their rightful owner. This presentation introduces Ucam’s technology including blockchain identity, decentralized storage (IPFS), and e2e encryption.",
@@ -245,7 +237,7 @@ export const ScheduleOne = [
     presenters: [Presenters["raullen-chai"]],
   },
   {
-    time: "4:00 PM PT",
+    time: "3:30 PM PT",
     name: "Day 1 Close",
     value: null,
     duration: 20,
