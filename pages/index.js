@@ -14,7 +14,7 @@ import Organizations from "~/components/Organizations";
 
 import { CodeOfConduct } from "~/pages/code-of-conduct";
 
-const EVENT_URL = `https://www.eventbrite.com/e/ipfs-pinning-summit-registration-102720606098`;
+const EVENT_URL = `https://www.youtube.com/playlist?list=PLuhRWgmPaHtTvsxuZ9T-tMlu_v0lja6v5`;
 
 const STYLES_SECTION = css`
   padding: 96px 24px 64px 24px;
@@ -318,7 +318,7 @@ export default class IndexPage extends React.Component {
                   style={{ margin: "0 0 48px 0" }}
                   href={EVENT_URL}
                 >
-                  Register now
+                  Watch the talks
                 </a>
               </div>
             </div>
@@ -346,11 +346,6 @@ export default class IndexPage extends React.Component {
           <H2>Organizations</H2>
 
           <Organizations data={Fixtures.Organizations} />
-        </div>
-
-        <div className={STYLES_SECTION} id="watch">
-          <H2>Watch</H2>
-          <H3>Uploaded videos and keynotes will appear here.</H3>
         </div>
 
         <div className={STYLES_SECTION} id="about">

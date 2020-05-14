@@ -87,7 +87,6 @@ export default (props) => {
       <span className={STYLES_LEFT}>
         <a
           className={STYLES_LOGO}
-          target="_blank"
           href="https://ipfspinningsummit.com/"
         >
           <SVG.Logo height="32px" />
@@ -107,10 +106,6 @@ export default (props) => {
           Organizations
         </a>
 
-        <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#watch">  
-          Watch 
-        </a>  
-
         <a className={STYLES_ITEM} style={{ marginLeft: 24 }} href="#about">
           About
         </a>
@@ -118,7 +113,7 @@ export default (props) => {
       </span>
       <span className={STYLES_RIGHT}>
         <a className={STYLES_ITEM} target="_blank" href={props.eventURL}>
-          Register
+          Watch the talks
         </a>
       </span>
     </div>
