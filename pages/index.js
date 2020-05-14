@@ -295,7 +295,7 @@ export default class IndexPage extends React.Component {
                   IPFS Pinning Summit
                 </div>
                 <div className={STYLES_CARD_BOTTOM_BOTTOM_TITLE}>
-                  May 7th — 8th
+                  May 7th — 8th, 2020
                 </div>
               </div>
             </div>
