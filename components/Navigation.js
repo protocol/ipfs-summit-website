@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as Constants from "~/common/constants";
 import * as SVG from "~/common/svg";
-import * as Fixtures from "~/common/fixtures";
 
 import { css } from "react-emotion";
 
@@ -17,6 +16,7 @@ const STYLES_FIXED_NAVIGATION = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 9;
 `;
 
 const STYLES_LEFT = css`
